@@ -19,20 +19,24 @@ export class Aluno {
 
   clone(): Aluno {
     var aluno: Aluno = new Aluno();
-    aluno.nome = this.nome;
-    aluno.cpf = this.cpf;
-    aluno.email = this.email;
-    aluno.loginGit = this.loginGit;
-    aluno.metas = this.cloneMetas();
+    aluno.metas = new Map<string,string>();
+    aluno.copyFrom(this);
     return aluno;
   }
-
-  cloneMetas(): Map<string,string> {
-    var metas: Map<string,string> = new Map<string,string>();
-    for (let key in this.metas) {
-      metas[key] = this.metas[key];
+    copyFrom(from: Aluno): void {
+      this.nome = from.nome;
+      this.cpf = from.cpf;
+      this.email = from.email;
+      this.loginGit = from.loginGit;
+      this.copyMetasFrom(from.metas);
     }
-    return metas;
-  }
+
+  copyMetasFrom(from: Map<string,string>): void {
+    this.metas = new Map<string,string>();
+    for (let key in from) {
+      this.metas[key] = from[key];
+    }
+}
+
 }
   
