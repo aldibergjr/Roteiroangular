@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AlunosComponent } from './alunos.component';
 import { MetasComponent } from './metas.component';
 import { AlunoService } from './alunos.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [

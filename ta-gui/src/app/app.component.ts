@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'dale-gui';
   aluno: Aluno = new Aluno();
   alunos: Aluno[] = [];
-  alunoService = new AlunoService();
+  constructor(private alunoService: AlunoService) {};
   cpfduplicado: boolean = false;
   criarAluno(a:Aluno):void{
     if(this.alunoService.criar(a)){
