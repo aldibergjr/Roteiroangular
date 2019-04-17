@@ -19,6 +19,7 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule, 
     RouterModule.forRoot([
       {
         path: 'metas',

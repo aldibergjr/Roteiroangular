@@ -1,8 +1,9 @@
 import { Aluno } from './aluno';
 import { Injectable }    from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+//import 'rxjs/add/operator/toPromise';
 
+@Injectable()
 export class AlunoService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
