@@ -7,7 +7,7 @@ class CadastroDeAlunos {
     }
     criar(aluno) {
         var result = null;
-        if (this.cpfNaoCadastrado(aluno.cpf)) {
+        if (this.cpfNaoCadastrado(aluno.cpf) && this.loginNaoCadastrado(aluno.loginGit)) {
             result = new aluno_1.Aluno();
             result.copyFrom(aluno);
             this.alunos.push(result);
@@ -17,11 +17,19 @@ class CadastroDeAlunos {
     cpfNaoCadastrado(cpf) {
         return !this.alunos.find(a => a.cpf == cpf);
     }
+    loginNaoCadastrado(git) {
+        return !this.alunos.find(a => a.loginGit == git);
+    }
     atualizar(aluno) {
         var result = this.alunos.find(a => a.cpf == aluno.cpf);
         if (result)
             result.copyFrom(aluno);
         return result;
+    }
+    remover(aluno) {
+        let index = this.alunos.findIndex(x => x.cpf == aluno.cpf);
+        this.alunos.splice(index, 1);
+        return true;
     }
     getAlunos() {
         return this.alunos;

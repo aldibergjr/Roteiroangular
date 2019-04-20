@@ -38,6 +38,14 @@ app.put('/aluno', function (req, res) {
         res.send({ "failure": "O aluno não pode ser atualizado" });
     }
 });
+app.delete('/aluno', function (req, res) {
+    var aluno = req.body;
+    let a = cadastro.remover(aluno);
+    if (a)
+        res.send({ "success": "O aluno foi deletado com sucesso" });
+    else
+        res.send({ "failure": "O aluno não pode ser deletado" });
+});
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
