@@ -30,7 +30,6 @@ export class AlunosComponent implements OnInit {
    }
 
    removerAluno(a: Aluno): void{
-     
       this.alunoService.remove(a).then(ab => {
          let index = this.alunos.findIndex(x => x.cpf == ab.cpf)
          this.alunos.splice(index,1);

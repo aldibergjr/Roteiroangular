@@ -43,9 +43,10 @@ app.put('/aluno', function (req: express.Request, res: express.Response) {
   }
 })
 
-app.delete('/aluno', function(req,res){
+app.delete('/aluno', function(req: express.Request,res: express.Response){
     var aluno:Aluno = <Aluno>req.body;
-    let a = cadastro.remover(aluno)
+    console.log("ta-sv: "+JSON.stringify(aluno))
+    var a = cadastro.remover(aluno)
     if(a)
       res.send({"success": "O aluno foi deletado com sucesso"})
     else

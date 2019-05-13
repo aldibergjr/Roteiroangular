@@ -24,15 +24,10 @@ export class CadastroDeAlunos {
     if (result) result.copyFrom(aluno);
     return result;
   }
-  remover(aluno: Aluno): boolean{
-    let index = this.alunos.findIndex(x => x.cpf == aluno.cpf)
+  remover(aluno: Aluno): boolean{ 
+    let index = this.alunos.findIndex(a => a.cpf == aluno.cpf)
       this.alunos.splice(index,1);
       return true;
-    
-    
-    
-    
-    
   }
 
   getAlunos(): Aluno[] {

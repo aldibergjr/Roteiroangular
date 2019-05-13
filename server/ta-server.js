@@ -40,6 +40,7 @@ app.put('/aluno', function (req, res) {
 });
 app.delete('/aluno', function (req, res) {
     var aluno = req.body;
+    console.log("ta-sv: " + JSON.stringify(aluno));
     let a = cadastro.remover(aluno);
     if (a)
         res.send({ "success": "O aluno foi deletado com sucesso" });

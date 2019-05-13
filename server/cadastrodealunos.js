@@ -27,8 +27,10 @@ class CadastroDeAlunos {
         return result;
     }
     remover(aluno) {
-        let index = this.alunos.findIndex(x => x.cpf == aluno.cpf);
+        ("aln cds: " + JSON.stringify(aluno));
+        let index = this.alunos.findIndex(a => a.cpf == aluno.cpf);
         this.alunos.splice(index, 1);
+        // delete this.alunos[index]
         return true;
     }
     getAlunos() {
